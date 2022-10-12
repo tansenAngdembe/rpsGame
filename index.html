@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p>Play now ! Rock ,Paper, Secissor game.</p>
+    <h2>Choose</h2>
+    <div class="mainBox">
+        <button id="firstBnt" type="button" value="Rock" onclick="playerClick(bnt1.value)">&#9994;</button>
+        <button id="secondBnt" type="button" value="Paper" onclick="playerClick(bnt2.value)">&#9995;</button>
+        <button id="lastBnt" type="button" value="Secissor" onclick="playerClick(bnt3.value)">&#9996;</button>
+    </div><br>
+
+    <div id="result">
+        <div id="Continar">
+            You<span id="yourCount">0</span>
+
+        </div>
+        <div id="Continar">
+            Computer<span id="computerCount">0</span>
+
+        </div>
+
+    </div>
+
+    <!-- <script>
+
+        let id = (id) => document.getElementById(id);
+        let finalcolumn=document.querySelector("[final-column]")
+        let userChoise = id("choise"),
+            bnt1 = id("firstBnt"),
+            bnt2 = id("secondBnt"),
+            bnt3 = id("lastBnt"),
+            
+            yourScore=id("yourCount"),
+            computerScore=id("computerCount")
+
+
+        let selection = [
+            {
+                name: "Rock",
+                emoji: bnt1.innerHTML,
+                beates: "Secissor"
+            },
+            {
+                name: "Paper",
+                emoji: bnt2.innerHTML,
+                beates: "Rock"
+            }, {
+                name: "Secissor",
+                emoji: bnt3.innerHTML,
+                beates: "Paper"
+            }
+        ]
+        let playerClick= (Parameter) => {
+            let mySelection = selection.find(select => select.name === Parameter);
+            makeSelection(mySelection)
+        }
+        let makeSelection = (selection) => {
+            const computerSelection = randomSelection()
+            const youWinner = isWinner(selection, computerSelection)
+            const computerWinner = isWinner(computerSelection, selection)
+            // console.log(computerSelection)
+            result(computerSelection, computerWinner)
+            result(selection, youWinner)
+            if(youWinner) increment(yourScore)
+            if(computerWinner) increment(computerScore)
+        }
+        let increment=(score)=>{
+            score.innerText=parseInt(score.innerText) + 1
+
+        }
+        let result = (selection, winner) => {
+            const div = document.createElement("div")
+            div.innerText = selection.emoji
+            div.classList.add("resultCom")
+            if (winner) div.classList.add("winner")
+            finalcolumn.after(div)
+        }
+        let isWinner = (selection, opponentSelection) => {
+            return selection.beates === opponentSelection.name;
+
+        }
+        let randomSelection = () => {
+            const randomIndex = Math.floor(Math.random() * selection.length);
+            return selection[randomIndex];
+        } -->
+
+    <!-- </script> -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>
